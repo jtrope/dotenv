@@ -275,7 +275,14 @@ you should place you code here."
   (global-set-key (kbd "M-h") 'backward-kill-word)
   (global-set-key (kbd "C-x C-g") 'goto-line)
   (global-set-key (kbd "C-x i") 'helm-projectile-find-file)
+
+  ;;TODO: Move somewhere better
+  (custom-set-variables
+   '(helm-ag-command-option "-i"))
   )
+
+  ;; allows paste into selected region
+  (delete-selection-mode 1)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
