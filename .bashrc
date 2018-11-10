@@ -16,6 +16,8 @@ alias gpo="git push origin"
 alias gad="git add -A"
 alias gci="git ci -m"
 alias gst="git st"
+alias gco="git co"
+alias gdiff="git diff"
 
 function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
@@ -32,3 +34,9 @@ PS1="$PS1 \$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \")\[\033[1;33m\]\$
 
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
+
+# Download git auto-completion script from:
+# curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
