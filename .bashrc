@@ -13,6 +13,9 @@ alias cdev="cd ~/Dev/"
 # git aliases
 alias gwip="git commit -am 'WIP'"
 alias gpo="git push origin"
+alias gad="git add -A"
+alias gci="git ci -m"
+alias gst="git st"
 
 function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
