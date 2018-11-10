@@ -1,6 +1,18 @@
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
-# Displays Git Branch in Command Prompt
+alias ll="ls -FGlAhp"
+alias cp="cp -iv"
+alias mv="mv -iv"
+alias mkdir="mkdir -pv"
+alias ~="cd ~"
+alias .1="cd ../"
+alias .2="cd ../../"
+alias .3="cd ../../../"
+alias .4="cd ../../../../"
+alias .5="cd ../../../../../"
+alias cdev="cd ~/Dev/"
+
+# git aliases
+alias gwip="git commit -am 'WIP'"
+alias gpo="git push origin"
 
 function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1/"
@@ -15,5 +27,5 @@ PS1="$PS1\e[32;40m\w\e[m"
 # Prompt 3: "(gitbranch)"
 PS1="$PS1 \$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \")\[\033[1;33m\]\$(parse_git_branch)\[\033[1;37m\]\n\$ \[$(tput sgr0)\]"
 
-# PS1="$txtylw\w$txtgrn\$(branch)$txtwht ∴$txtrst "
-##
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
