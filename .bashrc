@@ -9,6 +9,7 @@ alias .3="cd ../../../"
 alias .4="cd ../../../../"
 alias .5="cd ../../../../../"
 alias cdev="cd ~/Dev/"
+alias rmpyc="find . -name '*.pyc' -delete"
 
 # git aliases
 alias gwip="git commit -am 'WIP'"
